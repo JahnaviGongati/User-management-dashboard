@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Management Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="sidebar">
+    <h2>UserHub</h2>
+    <p class="active">Dashboard</p>
+    <p>Users</p>
+  </div>
+
+  <main class="main">
+    <header>
+      <div>
+        <h1>User Management</h1>
+        <p>Manage your users in one place.</p>
+      </div>
+      <button id="addBtn">+ Add User</button>
+    </header>
+
+    <section class="stats">
+      <div class="stat-card">
+        <p>Total Users</p>
+        <h2 id="totalUsers">0</h2>
+      </div>
+      <div class="stat-card">
+        <p>Dashboard</p>
+        <h2>Overview</h2>
+      </div>
+    </section>
+
+    <section class="users-section">
+      <h2>All Users</h2>
+      <input id="search" type="text" placeholder="Search users...">
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Role</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="userTable"></tbody>
+        </table>
+      </div>
+      <p id="message"></p>
+    </section>
+  </main>
+
+  <div id="modal" class="modal hidden">
+    <form id="userForm" class="form">
+      <h2 id="formTitle">Add User</h2>
+      <input type="hidden" id="userId">
+      <label>Name</label>
+      <input id="name" type="text" required>
+      <label>Email</label>
+      <input id="email" type="email" required>
+      <label>Role</label>
+      <select id="role" required>
+        <option value="">Select role</option>
+        <option>Student</option>
+        <option>Developer</option>
+        <option>Admin</option>
+      </select>
+      <div class="form-actions">
+        <button type="button" id="cancelBtn" class="cancel">Cancel</button>
+        <button type="submit">Save User</button>
+      </div>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
